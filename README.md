@@ -1,5 +1,5 @@
 # Custom Web app generator
-> Custom webapp source file front-end web app with source files using [gulp](http://gulpjs.com/) for the build process.
+> Custom gulp tasks for front-end web app with source, development and production using [gulp](http://gulpjs.com/) for the build process.
 
 ## Features:
 * Generate clean development code
