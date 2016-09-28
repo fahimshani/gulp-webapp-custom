@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var newer = require('gulp-newer');
 var sass = require('gulp-sass');
 var notify = require('gulp-notify');
 var fileinclude = require('gulp-file-include');
@@ -136,13 +137,13 @@ gulp.task('dev', function(callback) {
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
-        .pipe(gulp.dest(prodDir));
+        .pipe(gulp.dest(prodDir))
         .pipe(notify({ message: 'codes minification completed', onLast: true }));
     });
 
     gulp.task('copyAssets:prod', function() {
        gulp.src(devDir+'fonts/**/*.*')
-       .pipe(gulp.dest(prodDir+'/fonts'));
+       .pipe(gulp.dest(prodDir+'/fonts'))
        .pipe(notify({ message: 'Assets copied to production', onLast: true }));
     });
 
@@ -160,7 +161,7 @@ gulp.task('dev', function(callback) {
       }))
       // .pipe(clean())
       .pipe(gulp.dest(prodDir))
-      .pipe(notify({ message: 'Code minification process completed', onLast: true}));
+      .pipe(notify({ message: 'HTML minification completed', onLast: true}));
     });
 
     // Images
