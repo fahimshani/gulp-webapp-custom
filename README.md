@@ -1,5 +1,5 @@
 # Custom Web app generator
->Custom [Webapp-generator](https://github.com/yeoman/generator-webapp) generator that scaffolds out a front-end web app using [gulp](http://gulpjs.com/) for the build process.
+> Custom webapp source file front-end web app with source files using [gulp](http://gulpjs.com/) for the build process.
 
 ## Features:
 * Generate clean development code
