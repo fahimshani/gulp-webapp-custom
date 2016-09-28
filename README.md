@@ -1,4 +1,4 @@
-# Custom Web app generator
+# Custom web app
 > Custom gulp tasks for front-end web app with source, development and production using [gulp](http://gulpjs.com/) for the build process.
 
 ## Features:
