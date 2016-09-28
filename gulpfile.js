@@ -51,7 +51,8 @@ var srcDir = 'source/',
         .pipe(gulp.dest(tmpDir+'/css/'))
         .pipe(browserSync.reload({
           stream: true
-        }));
+        }))
+        .pipe(notify({ message: 'sass task completed', onLast: true }));
     });
 
     gulp.task('fileinclude', function() {
@@ -136,12 +137,13 @@ gulp.task('dev', function(callback) {
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest(prodDir));
+        .pipe(notify({ message: 'codes minification completed', onLast: true }));
     });
 
     gulp.task('copyAssets:prod', function() {
        gulp.src(devDir+'fonts/**/*.*')
        .pipe(gulp.dest(prodDir+'/fonts'));
-
+       .pipe(notify({ message: 'Assets copied to production', onLast: true }));
     });
 
     gulp.task('minify', function() {
@@ -181,8 +183,7 @@ gulp.task('dev', function(callback) {
 
 gulp.task('prod', function(callback) {
   'clean:prod',
-  'useref',
-  runSequence(['copyAssets:prod', 'images', 'browserSync:prod'],
+  runSequence(['copyAssets:prod', 'images', 'useref', 'browserSync:prod'],
     callback
   )
 });
