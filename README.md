@@ -13,7 +13,7 @@
 
 ## Getting Started
 
-- Clone repository git clone https://github.com/fahimshani/gulp-webapp-custom
+- Clone repository git clone https://github.com/fahimshani/gulp-webapp-custom && cd gulp-webapp-custom
 - Run `npm install'
 - Run `gulp` to preview and watch for changes
 - Run `gulp dev` to build your webapp for development and preview
